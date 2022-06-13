@@ -32,6 +32,17 @@
 </head>
 
 <body>
+  
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("firebase-messaging-sw.js");
+  });
+
+  window.addEventListener('flutter-first-frame', function () {
+    navigator.serviceWorker.register('flutter_service_worker.js');
+  });
+}
 
 
   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
